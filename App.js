@@ -71,6 +71,7 @@ const App: () => Node = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Text>MAD-NATIVE</Text>
+          <Text>FUNCIONAL IOS</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
