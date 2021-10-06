@@ -1,5 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text, Button} from 'react-native';
+import {
+  requestCameraPermission,
+  requestStoragePermission,
+  requestLocationPermission,
+  requestMultiplePermission,
+  checkMultiplePermissions,
+} from '../../permissions/index';
 
 const PermissionScreen = ({navigation}) => {
   return (
@@ -8,27 +15,27 @@ const PermissionScreen = ({navigation}) => {
       <Button
         title="CAMARA"
         color="black"
-        onPress={() => console.log('CAMARA')}
+        onPress={() => requestCameraPermission()}
       />
       <Button
         title="LOCALIZACION"
         color="red"
-        onPress={() => console.log('LOCALIZACION')}
+        onPress={() => requestLocationPermission()}
       />
       <Button
         title="DOCUMENTOS"
         color="black"
-        onPress={() => console.log('DOCUMENTOS')}
+        onPress={() => requestStoragePermission()}
       />
       <Button
         title="SOLICITAR MULTIPLES PERMISOS"
         color="red"
-        onPress={() => console.log('SOLICITAR MULTIPLES PERMISOS')}
+        onPress={() => requestMultiplePermission()}
       />
       <Button
         title="VER PERMISOS CONCEDIDOS"
         color="black"
-        onPress={() => console.log('VER PERMISOS CONCEDIDOS')}
+        onPress={() => checkMultiplePermissions()}
       />
       <Button
         title="Home"
