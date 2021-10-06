@@ -14,45 +14,57 @@ import {
     */
 
 //REQUEST
-export const requestCameraPermission = () => {
+export const requestCameraPermissionAndroid = () => {
   request(PERMISSIONS.ANDROID.CAMERA).then(result => {
     console.log(result);
   });
 };
 
-export const requestStoragePermission = () => {
+export const requestStoragePermissionAndroid = () => {
   request(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE).then(result => {
     console.log(JSON.stringify(result));
   });
 };
 
-export const requestLocationPermission = () => {
+export const requestLocationPermissionAndroid = () => {
   request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION).then(result => {
     console.log(JSON.stringify(result));
   });
 };
 
-export const requestMultiplePermission = () =>
+export const requestMultiplePermissionAndroid = () =>
   requestMultiple([
     PERMISSIONS.ANDROID.CAMERA,
     PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
     PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
   ]).then(statuses => {
-    console.log('Camera', statuses[PERMISSIONS.ANDROID.CAMERA]);
-    console.log('Storage', statuses[PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE]);
-    console.log('Location', statuses[PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION]);
+    console.log('Android Camera', statuses[PERMISSIONS.ANDROID.CAMERA]);
+    console.log(
+      'Android Storage',
+      statuses[PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE],
+    );
+    console.log(
+      'Android Location',
+      statuses[PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION],
+    );
   });
 
 //CHECK
 
-export const checkMultiplePermissions = () => {
+export const checkMultiplePermissionsAndroid = () => {
   checkMultiple([
     PERMISSIONS.ANDROID.CAMERA,
     PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
     PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
   ]).then(statuses => {
-    console.log('Camera', statuses[PERMISSIONS.ANDROID.CAMERA]);
-    console.log('Storage', statuses[PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE]);
-    console.log('Location', statuses[PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION]);
+    console.log('Android Camera', statuses[PERMISSIONS.ANDROID.CAMERA]);
+    console.log(
+      'Android Storage',
+      statuses[PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE],
+    );
+    console.log(
+      'Android Location',
+      statuses[PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION],
+    );
   });
 };

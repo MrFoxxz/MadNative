@@ -1,10 +1,15 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, Platform, StyleSheet, Text, View} from 'react-native';
 
 const HomePage = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text>MAD NATIVE APP</Text>
+      <Text style={styles.tittle}>MAD NATIVE APP</Text>
+      <Text style={styles.tittle}>{Platform.OS}</Text>
+      <Text>
+        {'\n'}
+        {'\n'}
+      </Text>
       <Button
         title="Mapa"
         color="black"
