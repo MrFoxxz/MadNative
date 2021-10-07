@@ -1,17 +1,39 @@
-import React from 'react';
-import {View, Platform, StyleSheet, Text, Button} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { View, ScrollView, Image, Platform, StyleSheet, Text, Button } from 'react-native';
 
-const CallApiScreen = ({navigation}) => {
+const CallApiScreen = ({ navigation }) => {
+  const [testImages, setTestImages] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://dog.ceo/api/breeds/image/random/3').then(response => {
+      let data = response.data.message;
+      setTestImages(data);
+    });
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.tittle}>Prueba de API</Text>
-      <Text style={styles.tittlePlatform}>{Platform.OS}</Text>
-      <Text>
-        {'\n'}
-        {'\n'}
-      </Text>
-      <Button title="Home" onPress={() => navigation.navigate('Home')} />
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.tittle}>Prueba de API</Text>
+        <Text style={styles.tittlePlatform}>{Platform.OS}</Text>
+        <Text>
+          {'\n'}
+          {'\n'}
+        </Text>
+        {testImages.map(img => {
+          return (
+            <Image
+              key={img}
+              style={styles.tinyLogo}
+              source={{
+                uri: img,
+              }}
+            />)
+        })}
+        <Button title="Home" onPress={() => navigation.navigate('Home')} />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -25,6 +47,12 @@ const styles = StyleSheet.create({
   tittle: {
     alignSelf: 'center',
     fontSize: 30,
+  },
+  tinyLogo: {
+    width: 200,
+    height: 200,
+    margin: 10,
+    alignSelf: 'center'
   },
   tittlePlatform: {
     color: Platform.OS === 'ios' ? 'grey' : 'green',
