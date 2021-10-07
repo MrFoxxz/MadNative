@@ -15,6 +15,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomePage from './screens/homePage';
 import PermissionScreen from './screens/permissionsTest';
 import MapScreen from './screens/map';
+import CallApiScreen from './screens/callApi/index.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,11 @@ const App = () => {
         <Stack.Screen
           name="Permisos"
           component={PermissionScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="CallApi"
+          component={CallApiScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

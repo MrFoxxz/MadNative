@@ -12,7 +12,7 @@ const PermissionScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.tittle}>PRUEBA DE PERMISOS</Text>
-      <Text style={styles.tittle}>{Platform.OS}</Text>
+      <Text style={styles.tittlePlatform}>{Platform.OS}</Text>
       <Text>
         {'\n'}
         {'\n'}
@@ -30,7 +30,7 @@ const PermissionScreen = ({navigation}) => {
       />
       <Button
         title="LOCALIZACION"
-        color="red"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
         onPress={() => {
           if (Platform.OS === 'android') {
             requestLocationPermissionAndroid();
@@ -52,7 +52,7 @@ const PermissionScreen = ({navigation}) => {
       />
       <Button
         title="SOLICITAR MULTIPLES PERMISOS"
-        color="red"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
         onPress={() => {
           if (Platform.OS === 'android') {
             requestMultiplePermissionAndroid();
@@ -72,11 +72,7 @@ const PermissionScreen = ({navigation}) => {
           }
         }}
       />
-      <Button
-        title="Home"
-        color="red"
-        onPress={() => navigation.navigate('Home')}
-      />
+      <Button title="Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
@@ -91,6 +87,11 @@ const styles = StyleSheet.create({
   tittle: {
     alignSelf: 'center',
     fontSize: 30,
+  },
+  tittlePlatform: {
+    color: Platform.OS === 'ios' ? 'grey' : 'green',
+    alignSelf: 'center',
+    fontSize: 40,
   },
   text: {
     fontSize: 20,

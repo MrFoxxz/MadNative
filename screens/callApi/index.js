@@ -1,30 +1,16 @@
 import React from 'react';
-import {Button, Platform, StyleSheet, Text, View} from 'react-native';
+import {View, Platform, StyleSheet, Text, Button} from 'react-native';
 
-const HomePage = ({navigation}) => {
+const CallApiScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.tittle}>MAD NATIVE APP</Text>
+      <Text style={styles.tittle}>Prueba de API</Text>
       <Text style={styles.tittlePlatform}>{Platform.OS}</Text>
       <Text>
         {'\n'}
         {'\n'}
       </Text>
-      <Button
-        title="Mapa"
-        color="black"
-        onPress={() => navigation.navigate('Mapa')}
-      />
-      <Button
-        title="Permisos"
-        color={Platform.OS === 'ios' ? 'grey' : 'green'}
-        onPress={() => navigation.navigate('Permisos')}
-      />
-      <Button
-        title="Prueba de API"
-        color="black"
-        onPress={() => navigation.navigate('CallApi')}
-      />
+      <Button title="Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
@@ -45,9 +31,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 40,
   },
-  text: {
-    fontSize: 20,
-  },
   input: {
     backgroundColor: '#c5ced8',
     borderRadius: 10,
@@ -55,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomePage;
+export default CallApiScreen;
