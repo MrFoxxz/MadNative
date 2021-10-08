@@ -20,42 +20,53 @@ import {
     });
   };
   
- /*  export const requestStoragePermissionAndroid = () => {
-    request(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE).then(result => {
-      console.log(JSON.stringify(result));
+ export const requestMediaLibraryPermissionIOS = () => {
+    request(PERMISSIONS.IOS.MEDIA_LIBRARY).then(result => {
+      console.log(result);
     });
   };
-  
-  export const requestLocationPermissionAndroid = () => {
-    request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION).then(result => {
-      console.log(JSON.stringify(result));
+
+   
+  export const requestLocationPermissionIOS = () => {
+    request(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE).then(result => {
+      console.log(result);
     });
-  }; */
+  }; 
   
-/*   export const requestMultiplePermissionAndroid = () =>
+  export const requestMultiplePermissionIOS = () =>
     requestMultiple([
-      PERMISSIONS.ANDROID.CAMERA,
-      PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
-      PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+      PERMISSIONS.IOS.CAMERA,
+      PERMISSIONS.IOS.MEDIA_LIBRARY,
+      PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
     ]).then(statuses => {
-      console.log('Android Camera', statuses[PERMISSIONS.ANDROID.CAMERA]);
+      console.log('ios Camera', statuses[PERMISSIONS.IOS.CAMERA]);
       console.log(
-        'Android Storage',
-        statuses[PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE],
+        'ios Storage',
+        statuses[PERMISSIONS.IOS.MEDIA_LIBRARY],
       );
       console.log(
-        'Android Location',
-        statuses[PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION],
+        'ios Location',
+        statuses[PERMISSIONS.IOS.LOCATION_WHEN_IN_USE],
       );
-    }); */
+    }); 
   
   //CHECK
   
   export const checkMultiplePermissionsIOS = () => {
     checkMultiple([
         PERMISSIONS.IOS.CAMERA,
+        PERMISSIONS.IOS.MEDIA_LIBRARY,
+        PERMISSIONS.IOS.LOCATION_WHEN_IN_USE
     ]).then(statuses => {
       console.log('ios Camera', statuses[PERMISSIONS.IOS.CAMERA]);
+      console.log(
+        'ios Storage',
+        statuses[PERMISSIONS.IOS.MEDIA_LIBRARY],
+      );
+      console.log(
+        'ios Storage',
+        statuses[PERMISSIONS.IOS.LOCATION_WHEN_IN_USE],
+      );
     });
   };
   

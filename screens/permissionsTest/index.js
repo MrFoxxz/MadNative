@@ -10,6 +10,9 @@ import {
 
 import {
   requestCameraPermissionIOS,
+  requestMediaLibraryPermissionIOS,
+  requestLocationPermissionIOS,
+  requestMultiplePermissionIOS,
   checkMultiplePermissionsIOS
 } from '../../permissions/ios/index';
 
@@ -41,7 +44,7 @@ const PermissionScreen = ({navigation}) => {
           if (Platform.OS === 'android') {
             requestLocationPermissionAndroid();
           } else if (Platform.OS === 'ios') {
-            console.log('LOCALIZACION IOS');
+            requestLocationPermissionIOS()
           }
         }}
       />
@@ -52,7 +55,7 @@ const PermissionScreen = ({navigation}) => {
           if (Platform.OS === 'android') {
             requestStoragePermissionAndroid();
           } else if (Platform.OS === 'ios') {
-            console.log('DOCUMENTOS IOS');
+            requestMediaLibraryPermissionIOS()
           }
         }}
       />
@@ -63,7 +66,7 @@ const PermissionScreen = ({navigation}) => {
           if (Platform.OS === 'android') {
             requestMultiplePermissionAndroid();
           } else if (Platform.OS === 'ios') {
-            console.log('SOLICITAR MULTIPLES PERMISOS IOS');
+            requestMultiplePermissionIOS()
           }
         }}
       />

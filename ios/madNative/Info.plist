@@ -5,6 +5,10 @@
 
  	<key>NSCameraUsageDescription</key>
   	<string>Camera Permission</string>
+	<key>NSMediaLibraryUsageDescription</key>
+  	<string>MediaLibrary Permission</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  	<string>Location Permission</string>
 	
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
