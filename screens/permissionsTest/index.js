@@ -8,6 +8,11 @@ import {
   checkMultiplePermissionsAndroid,
 } from '../../permissions/android/index';
 
+import {
+  requestCameraPermissionIOS,
+  checkMultiplePermissionsIOS
+} from '../../permissions/ios/index';
+
 const PermissionScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
@@ -23,8 +28,9 @@ const PermissionScreen = ({navigation}) => {
         onPress={() => {
           if (Platform.OS === 'android') {
             requestCameraPermissionAndroid();
-          } else if (Platform.OS === 'android') {
-            console.log('CAMARA IOS');
+          } else if (Platform.OS === 'ios') {
+            requestCameraPermissionIOS();
+            
           }
         }}
       />
@@ -34,7 +40,7 @@ const PermissionScreen = ({navigation}) => {
         onPress={() => {
           if (Platform.OS === 'android') {
             requestLocationPermissionAndroid();
-          } else if (Platform.OS === 'android') {
+          } else if (Platform.OS === 'ios') {
             console.log('LOCALIZACION IOS');
           }
         }}
@@ -45,7 +51,7 @@ const PermissionScreen = ({navigation}) => {
         onPress={() => {
           if (Platform.OS === 'android') {
             requestStoragePermissionAndroid();
-          } else if (Platform.OS === 'android') {
+          } else if (Platform.OS === 'ios') {
             console.log('DOCUMENTOS IOS');
           }
         }}
@@ -56,7 +62,7 @@ const PermissionScreen = ({navigation}) => {
         onPress={() => {
           if (Platform.OS === 'android') {
             requestMultiplePermissionAndroid();
-          } else if (Platform.OS === 'android') {
+          } else if (Platform.OS === 'ios') {
             console.log('SOLICITAR MULTIPLES PERMISOS IOS');
           }
         }}
@@ -67,8 +73,8 @@ const PermissionScreen = ({navigation}) => {
         onPress={() => {
           if (Platform.OS === 'android') {
             checkMultiplePermissionsAndroid();
-          } else if (Platform.OS === 'android') {
-            console.log('VER PERMISOS CONCEDIDOS IOS');
+          } else if (Platform.OS === 'ios') {
+            checkMultiplePermissionsIOS()
           }
         }}
       />
