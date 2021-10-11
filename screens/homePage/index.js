@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button, Platform, StyleSheet, Text, View} from 'react-native';
+import { Button, Platform, StyleSheet, Text, View } from 'react-native';
 
-const HomePage = ({navigation}) => {
+const HomePage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.tittle}>MAD NATIVE APP</Text>
@@ -24,6 +24,11 @@ const HomePage = ({navigation}) => {
         title="Prueba de API"
         color="black"
         onPress={() => navigation.navigate('CallApi')}
+      />
+      <Button
+        title="Prueba de NativeBase"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
+        onPress={() => navigation.navigate('NativeBase')}
       />
     </View>
   );
