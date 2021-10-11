@@ -10,6 +10,7 @@ import {
 
 import {
   requestCameraPermissionIOS,
+  requestMicroPermissionIOS,
   requestMediaLibraryPermissionIOS,
   requestLocationPermissionIOS,
   requestMultiplePermissionIOS,
@@ -33,6 +34,18 @@ const PermissionScreen = ({navigation}) => {
             requestCameraPermissionAndroid();
           } else if (Platform.OS === 'ios') {
             requestCameraPermissionIOS();
+            
+          }
+        }}
+      />
+        <Button
+        title="MICROFONO"
+        color="black"
+        onPress={() => {
+          if (Platform.OS === 'android') {
+            console.log('Micro');
+          } else if (Platform.OS === 'ios') {
+            requestMicroPermissionIOS();
             
           }
         }}

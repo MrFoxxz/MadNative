@@ -7,15 +7,15 @@ import {
     RESULTS,
   } from 'react-native-permissions';
   
-  /* 
-      Antes de crear permisos, recordar colocar el use permission
-      corresponiente en el siguiente archivo:
-      android\app\src\main\AndroidManifest.xml
-      */
-  
   //REQUEST
   export const requestCameraPermissionIOS = () => {
     request(PERMISSIONS.IOS.CAMERA).then(result => {
+      console.log(result);
+    });
+  };
+
+  export const requestMicroPermissionIOS = () => {
+    request(PERMISSIONS.IOS.MICROPHONE).then(result => {
       console.log(result);
     });
   };
@@ -28,7 +28,7 @@ import {
 
    
   export const requestLocationPermissionIOS = () => {
-    request(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE).then(result => {
+    request(PERMISSIONS.IOS.LOCATION_ALWAYS).then(result => {
       console.log(result);
     });
   }; 
@@ -36,17 +36,19 @@ import {
   export const requestMultiplePermissionIOS = () =>
     requestMultiple([
       PERMISSIONS.IOS.CAMERA,
+      PERMISSIONS.IOS.MICROPHONE,
       PERMISSIONS.IOS.MEDIA_LIBRARY,
-      PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
+      PERMISSIONS.IOS.LOCATION_ALWAYS,
     ]).then(statuses => {
       console.log('ios Camera', statuses[PERMISSIONS.IOS.CAMERA]);
+      console.log('ios Micro', statuses[PERMISSIONS.IOS.MICROPHONE]);
       console.log(
         'ios Storage',
         statuses[PERMISSIONS.IOS.MEDIA_LIBRARY],
       );
       console.log(
         'ios Location',
-        statuses[PERMISSIONS.IOS.LOCATION_WHEN_IN_USE],
+        statuses[PERMISSIONS.IOS.LOCATION_ALWAYS],
       );
     }); 
   
@@ -55,17 +57,19 @@ import {
   export const checkMultiplePermissionsIOS = () => {
     checkMultiple([
         PERMISSIONS.IOS.CAMERA,
+        PERMISSIONS.IOS.MICROPHONE,
         PERMISSIONS.IOS.MEDIA_LIBRARY,
-        PERMISSIONS.IOS.LOCATION_WHEN_IN_USE
+        PERMISSIONS.IOS.LOCATION_ALWAYS
     ]).then(statuses => {
       console.log('ios Camera', statuses[PERMISSIONS.IOS.CAMERA]);
+      console.log('ios Micro', statuses[PERMISSIONS.IOS.MICROPHONE]);
       console.log(
         'ios Storage',
         statuses[PERMISSIONS.IOS.MEDIA_LIBRARY],
       );
       console.log(
-        'ios Storage',
-        statuses[PERMISSIONS.IOS.LOCATION_WHEN_IN_USE],
+        'ios Location',
+        statuses[PERMISSIONS.IOS.LOCATION_ALWAYS],
       );
     });
   };
