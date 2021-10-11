@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button, Platform, StyleSheet, Text, View} from 'react-native';
+import { Button, Platform, StyleSheet, Text, View } from 'react-native';
 
-const HomePage = ({navigation}) => {
+const HomePage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.tittle}>MAD NATIVE APP</Text>
@@ -19,6 +19,11 @@ const HomePage = ({navigation}) => {
         title="Permisos"
         color="red"
         onPress={() => navigation.navigate('Permisos')}
+      />
+      <Button
+        title="CallApi"
+        color="black"
+        onPress={() => navigation.navigate('CallApi')}
       />
     </View>
   );
