@@ -36,7 +36,7 @@ const MapScreen = ({ navigation }) => {
           longitudeDelta: lonDelta,
         });
       },
-      error => Alert.alert('Error', JSON.stringify(error)),
+      error => console.log('Error', JSON.stringify(error)),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
   }, []);
