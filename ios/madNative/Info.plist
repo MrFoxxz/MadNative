@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 
- 	<key>NSAppleMusicUsageDescription</key>
+ <key>NSAppleMusicUsageDescription</key>
   <string>YOUR TEXT</string>
   <key>NSBluetoothAlwaysUsageDescription</key>
   <string>YOUR TEXT</string>
@@ -35,7 +35,7 @@
   <key>NSPhotoLibraryUsageDescription</key>
   <string>YOUR TEXT</string>
   <key>NSPhotoLibraryAddUsageDescription</key>
-  <string>YOUR TEXT</string>
+  <string>YOUR TEXT</string>	
   <key>NSRemindersUsageDescription</key>
   <string>YOUR TEXT</string>
   <key>NSSpeechRecognitionUsageDescription</key>

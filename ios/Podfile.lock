@@ -106,8 +106,6 @@ PODS:
     - RNPermissions
   - Permission-Reminders (3.0.5):
     - RNPermissions
-  - Permission-Siri (3.0.5):
-    - RNPermissions
   - Permission-SpeechRecognition (3.0.5):
     - RNPermissions
   - Permission-StoreKit (3.0.5):
@@ -429,7 +427,6 @@ DEPENDENCIES:
   - Permission-PhotoLibrary (from `../node_modules/react-native-permissions/ios/PhotoLibrary`)
   - Permission-PhotoLibraryAddOnly (from `../node_modules/react-native-permissions/ios/PhotoLibraryAddOnly`)
   - Permission-Reminders (from `../node_modules/react-native-permissions/ios/Reminders`)
-  - Permission-Siri (from `../node_modules/react-native-permissions/ios/Siri`)
   - Permission-SpeechRecognition (from `../node_modules/react-native-permissions/ios/SpeechRecognition`)
   - Permission-StoreKit (from `../node_modules/react-native-permissions/ios/StoreKit`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -523,8 +520,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-permissions/ios/PhotoLibraryAddOnly"
   Permission-Reminders:
     :path: "../node_modules/react-native-permissions/ios/Reminders"
-  Permission-Siri:
-    :path: "../node_modules/react-native-permissions/ios/Siri"
   Permission-SpeechRecognition:
     :path: "../node_modules/react-native-permissions/ios/SpeechRecognition"
   Permission-StoreKit:
@@ -621,7 +616,6 @@ SPEC CHECKSUMS:
   Permission-PhotoLibrary: 48e58291bd650b4f197cf542dad53f41dea4e84f
   Permission-PhotoLibraryAddOnly: 90b427e4a2acd37d1128618704b53364d73826c2
   Permission-Reminders: abfe3c6b64b840769d8d41dad13855dc3d4a8f53
-  Permission-Siri: 0e803bfece98ba36b59b623b9c2ccf306f4bfec4
   Permission-SpeechRecognition: 03a7098acfc5bfa3a6cf02f08def1430ee82f110
   Permission-StoreKit: 87ee7ea89653e86efe2680e14a62b3cdfa11e24f
   RCT-Folly: a21c126816d8025b547704b777a2ba552f3d9fa9
@@ -654,6 +648,6 @@ SPEC CHECKSUMS:
   Yoga: c11abbf5809216c91fcd62f5571078b83d9b6720
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 4b4b054c0e759ef96b432c61172e92f10d027a19
+PODFILE CHECKSUM: 7e33cf128945f955c8bcbbafe75fb78115967f09
 
 COCOAPODS: 1.11.2
