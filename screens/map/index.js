@@ -49,7 +49,7 @@ const MapScreen = ({ navigation }) => {
     <ScrollView>
       <View style={styles.titleContainer}>
         <Text style={styles.tittle}>MapScreen</Text>
-        <Text style={styles.tittle}>{Platform.OS}</Text>
+        <Text style={styles.platformTittle}>{Platform.OS}</Text>
       </View>
       <View style={styles.mapContainer}>
         <MapView
@@ -66,10 +66,10 @@ const MapScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View>
           <Text>MAPA</Text>
-          <Text>{'latitude:' + posicion.latitude}</Text>
-          <Text>{'longitude:' + posicion.longitude}</Text>
-          <Text>{'latitudeDelta:' + posicion.latitudeDelta}</Text>
-          <Text>{'longitudeDelta:' + posicion.longitudeDelta}</Text>
+          <Text>{'latitude:' + posicion.latitude.toFixed(4)}</Text>
+          <Text>{'longitude:' + posicion.longitude.toFixed(4)}</Text>
+          <Text>{'latitudeDelta:' + posicion.latitudeDelta.toFixed(4)}</Text>
+          <Text>{'longitudeDelta:' + posicion.longitudeDelta.toFixed(4)}</Text>
         </View>
         <Text>
           {'\n'}
@@ -104,6 +104,11 @@ const styles = StyleSheet.create({
   },
   tittle: {
     alignSelf: 'center',
+    fontSize: 30,
+  },
+  platformTittle: {
+    alignSelf: 'center',
+    color: Platform.OS === 'ios' ? 'grey' : 'green',
     fontSize: 30,
   },
   text: {
