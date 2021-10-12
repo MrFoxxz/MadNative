@@ -34,10 +34,10 @@ const MapScreen = ({ navigation }) => {
           coords.accuracy * (1 / (Math.cos(coords.latitude) * circunference));
         const lonDelta = coords.accuracy / oneDegreeOfLongitudeInMeters;
         setPosicion({
-          latitude: coords.latitude,
-          longitude: coords.longitude,
-          latitudeDelta: latDelta,
-          longitudeDelta: lonDelta,
+          latitude: coords.latitude.toFixed(4),
+          longitude: coords.longitude.toFixed(4),
+          latitudeDelta: latDelta.toFixed(4),
+          longitudeDelta: lonDelta.toFixed(4),
         });
       },
       error => console.log('Error', JSON.stringify(error)),
@@ -56,20 +56,23 @@ const MapScreen = ({ navigation }) => {
           provider={PROVIDER_GOOGLE} // remove if not using Google Maps
           style={styles.map}
           initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
+            latitude: 4.7110,
+            longitude: -74.0721,
+            latitudeDelta: 32.0679,
+            longitudeDelta: 0.0449,
           }}>
+          <Marker
+            coordinate={{ latitude: 4.7110, longitude: -74.0721 }}
+          />
         </MapView>
       </View>
       <View style={styles.container}>
         <View>
           <Text>MAPA</Text>
-          <Text>{'latitude:' + posicion.latitude.toFixed(4)}</Text>
-          <Text>{'longitude:' + posicion.longitude.toFixed(4)}</Text>
-          <Text>{'latitudeDelta:' + posicion.latitudeDelta.toFixed(4)}</Text>
-          <Text>{'longitudeDelta:' + posicion.longitudeDelta.toFixed(4)}</Text>
+          <Text>{'latitude:' + posicion.latitude}</Text>
+          <Text>{'longitude:' + posicion.longitude}</Text>
+          <Text>{'latitudeDelta:' + posicion.latitudeDelta}</Text>
+          <Text>{'longitudeDelta:' + posicion.longitudeDelta}</Text>
         </View>
         <Text>
           {'\n'}
