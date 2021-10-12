@@ -79,7 +79,7 @@ const MapScreen = ({ navigation }) => {
           {'\n'}
         </Text>
         <Button
-          title="Home"
+          title="go home"
           color="blue"
           onPress={() => navigation.navigate('Home')}
         />
