@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Platform, StyleSheet, Text, Button } from 'react-native';
+import { View, Platform, ScrollView, StyleSheet, Text, Button } from 'react-native';
 //Geolocation
 import Geolocation from '@react-native-community/geolocation';
+import MapView, {
+  Marker,
+  PROVIDER_GOOGLE,
+  ProviderPropType,
+} from 'react-native-maps';
 
 const MapScreen = ({ navigation }) => {
   const [posicion, setPosicion] = useState({
@@ -28,7 +33,6 @@ const MapScreen = ({ navigation }) => {
         const latDelta =
           coords.accuracy * (1 / (Math.cos(coords.latitude) * circunference));
         const lonDelta = coords.accuracy / oneDegreeOfLongitudeInMeters;
-
         setPosicion({
           latitude: coords.latitude,
           longitude: coords.longitude,
@@ -42,38 +46,61 @@ const MapScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.tittle}>MapScreen</Text>
-      <Text style={styles.tittle}>{Platform.OS}</Text>
-      <Text>
-        {'\n'}
-      </Text>
-      <View>
-        <Text>MAPA</Text>
-        <Text>{'latitude:' + posicion.latitude}</Text>
-        <Text>{'longitude:' + posicion.longitude}</Text>
-        <Text>{'latitudeDelta:' + posicion.latitudeDelta}</Text>
-        <Text>{'longitudeDelta:' + posicion.longitudeDelta}</Text>
+    <ScrollView>
+      <View style={styles.titleContainer}>
+        <Text style={styles.tittle}>MapScreen</Text>
+        <Text style={styles.tittle}>{Platform.OS}</Text>
       </View>
-      <Text>
-        {'\n'}
-        {'\n'}
-      </Text>
-      <Button
-        title="Home"
-        color="blue"
-        onPress={() => navigation.navigate('Home')}
-      />
-    </View>
+      <View style={styles.mapContainer}>
+        <MapView
+          provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+          style={styles.map}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}>
+        </MapView>
+      </View>
+      <View style={styles.container}>
+        <View>
+          <Text>MAPA</Text>
+          <Text>{'latitude:' + posicion.latitude}</Text>
+          <Text>{'longitude:' + posicion.longitude}</Text>
+          <Text>{'latitudeDelta:' + posicion.latitudeDelta}</Text>
+          <Text>{'longitudeDelta:' + posicion.longitudeDelta}</Text>
+        </View>
+        <Text>
+          {'\n'}
+          {'\n'}
+        </Text>
+        <Button
+          title="Home"
+          color="blue"
+          onPress={() => navigation.navigate('Home')}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     margin: 20,
+  },
+  titleContainer: {
+    margin: 20
+  },
+  mapContainer: {
+    height: 350,
     flex: 1,
-    alignContent: 'center',
-    justifyContent: 'center',
+    display: "flex"
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+    height: 350,
+    width: 'auto',
   },
   tittle: {
     alignSelf: 'center',
