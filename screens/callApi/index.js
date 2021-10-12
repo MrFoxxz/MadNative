@@ -16,7 +16,7 @@ const CallApiScreen = ({ navigation }) => {
         <ScrollView>
             <View style={styles.container}>
                 <Text style={styles.tittle}>Prueba de API</Text>
-                <Text style={styles.tittlePlatform}>{Platform.OS}</Text>
+                <Text style={styles.platformTittle}>{Platform.OS}</Text>
                 <Text>
                     {'\n'}
                     {'\n'}
@@ -54,11 +54,11 @@ const styles = StyleSheet.create({
         margin: 10,
         alignSelf: 'center'
     },
-    tittlePlatform: {
-        color: Platform.OS === 'ios' ? 'grey' : 'green',
+    platformTittle: {
         alignSelf: 'center',
-        fontSize: 40,
-    },
+        color: Platform.OS === 'ios' ? 'grey' : 'green',
+        fontSize: 30,
+      },
     input: {
         backgroundColor: '#c5ced8',
         borderRadius: 10,

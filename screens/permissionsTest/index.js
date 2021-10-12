@@ -21,7 +21,7 @@ const PermissionScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.tittle}>PRUEBA DE PERMISOS</Text>
-      <Text style={styles.tittle}>{Platform.OS}</Text>
+      <Text style={styles.platformTittle}>{Platform.OS}</Text>
       <Text>
         {'\n'}
         {'\n'}
@@ -112,6 +112,11 @@ const styles = StyleSheet.create({
   },
   tittle: {
     alignSelf: 'center',
+    fontSize: 30,
+  },
+  platformTittle: {
+    alignSelf: 'center',
+    color: Platform.OS === 'ios' ? 'grey' : 'green',
     fontSize: 30,
   },
   text: {
