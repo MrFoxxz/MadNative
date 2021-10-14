@@ -17,13 +17,18 @@ const HomePage = ({ navigation }) => {
       />
       <Button
         title="Permisos"
-        color="red"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
         onPress={() => navigation.navigate('Permisos')}
       />
       <Button
         title="CallApi"
         color="black"
         onPress={() => navigation.navigate('CallApi')}
+      />
+      <Button
+        title="Native Base"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
+        onPress={() => navigation.navigate('NativeBase')}
       />
     </View>
   );

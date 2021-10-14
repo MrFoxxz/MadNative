@@ -40,7 +40,7 @@ const PermissionScreen = ({navigation}) => {
       />
         <Button
         title="MICROFONO"
-        color="black"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
         onPress={() => {
           if (Platform.OS === 'android') {
             console.log('Micro');
@@ -52,7 +52,7 @@ const PermissionScreen = ({navigation}) => {
       />
       <Button
         title="LOCALIZACION"
-        color="red"
+        color="black"
         onPress={() => {
           if (Platform.OS === 'android') {
             requestLocationPermissionAndroid();
@@ -63,7 +63,7 @@ const PermissionScreen = ({navigation}) => {
       />
       <Button
         title="DOCUMENTOS"
-        color="black"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
         onPress={() => {
           if (Platform.OS === 'android') {
             requestStoragePermissionAndroid();
@@ -74,7 +74,7 @@ const PermissionScreen = ({navigation}) => {
       />
       <Button
         title="SOLICITAR MULTIPLES PERMISOS"
-        color="red"
+        color="black"
         onPress={() => {
           if (Platform.OS === 'android') {
             requestMultiplePermissionAndroid();
@@ -85,7 +85,7 @@ const PermissionScreen = ({navigation}) => {
       />
       <Button
         title="VER PERMISOS CONCEDIDOS"
-        color="black"
+        color={Platform.OS === 'ios' ? 'grey' : 'green'}
         onPress={() => {
           if (Platform.OS === 'android') {
             checkMultiplePermissionsAndroid();
@@ -96,7 +96,6 @@ const PermissionScreen = ({navigation}) => {
       />
       <Button
         title="Home"
-        color="red"
         onPress={() => navigation.navigate('Home')}
       />
     </View>

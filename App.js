@@ -16,11 +16,15 @@ import HomePage from './screens/homePage';
 import PermissionScreen from './screens/permissionsTest';
 import MapScreen from './screens/map';
 import CallApiScreen from './screens/callApi';
+import NativeBase from './screens/nativeBase';
+
+import { NativeBaseProvider} from 'native-base';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
+    <NativeBaseProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -39,12 +43,18 @@ const App = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="NativeBase"
+          component={NativeBase}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="CallApi"
           component={CallApiScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </NativeBaseProvider>
   );
 };
 
